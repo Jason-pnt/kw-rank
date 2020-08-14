@@ -39,6 +39,8 @@ driver.find_element_by_xpath('//*[@id="GLUXZipUpdateInput"]').send_keys('10001')
 time.sleep(5)
 driver.find_element_by_xpath('//*[@id="GLUXZipUpdate"]/span/input').click()
 time.sleep(5)
+driver.get('https://www.amazon.com/')
+print('Amazon ZIPCode:'+ driver.find_element_by_xpath('//*[@id="glow-ingress-line2"]').text)
 
 counts = 0
 final_result = {}
