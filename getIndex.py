@@ -85,7 +85,7 @@ with open('test.csv','r') as f:
                         else:
                             if final_result[keyword][1] == 0:
                                 final_result[keyword][1] = 0
-                            pirnt('Error :\n' + links + '\n Please check it')
+                            print('Error :\n' + links + '\n Please check it')
                     else:
                         if ('sr_1_' in links):
                             nature = links.split('sr_1_')[1].split('?')[0]
@@ -94,7 +94,7 @@ with open('test.csv','r') as f:
                         else:
                             if final_result[keyword][2] == 0:
                                 final_result[keyword][2] = 0
-                            pirnt('Error :\n' + links + '\n Please check it')
+                            print('Error :\n' + links + '\n Please check it')
 driver.quit()
 print("\n\n")
 for k,v in final_result.items():
