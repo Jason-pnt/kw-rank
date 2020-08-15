@@ -77,6 +77,7 @@ with open('test.csv','r') as f:
                 soup = BeautifulSoup(driver.page_source, "html.parser")
                 for asin in soup.find_all(href=re.compile("READY-PARD-")):
                     links = str(asin.get('href'))
+                    print(links)
                     if (links.startswith('/gp')):
                         # adver 
                         adver = links.split('sr_1_')[1].split('_')[0]
