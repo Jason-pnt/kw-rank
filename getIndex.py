@@ -63,7 +63,7 @@ with open('test.csv','r') as f:
             print(str(counts) + ' for  keyword: ' + keyword)
             if (keyword not in final_result):
                 final_result[keyword] = [0, 0, 0]
-            for i in range(1,2):
+            for i in range(1,7):
                 # print('page :' + str(i))
                 if (final_result[keyword][1] != 0 and final_result[keyword][2] != 0):
                     break
@@ -77,7 +77,11 @@ with open('test.csv','r') as f:
                 soup = BeautifulSoup(driver.page_source, "html.parser")
                 for asin in soup.find_all(href=re.compile("READY-PARD-")):
                     links = str(asin.get('href'))
+                    print('+++++++++++++++++')
                     print(links)
+                    print(type(links))
+                    print(len(links))
+                    print('-----------------')
                     if (links.startswith('/gp')):
                         # adver 
                         adver = links.split('sr_1_')[1].split('_')[0]
