@@ -40,7 +40,7 @@ time.sleep(5)
 driver.find_element_by_xpath('//*[@id="GLUXZipUpdate"]/span/input').click()
 time.sleep(5)
 driver.get('https://www.amazon.com/')
-print('Amazon ZIPCode:'+ driver.find_element_by_xpath('//*[@id="glow-ingress-line2"]').text)
+print('\n Amazon ZIPCode:'+ driver.find_element_by_xpath('//*[@id="glow-ingress-line2"]').text)
 
 counts = 0
 final_result = {}
@@ -77,21 +77,24 @@ with open('test.csv','r') as f:
                 soup = BeautifulSoup(driver.page_source, "html.parser")
                 for asin in soup.find_all(href=re.compile("READY-PARD-")):
                     links = str(asin.get('href'))
-                    print('+++++++++++++++++')
-                    print(links)
-                    print(type(links))
-                    print(len(links))
-                    print('-----------------')
                     if (links.startswith('/gp')):
-                        # adver 
-                        adver = links.split('sr_1_')[1].split('_')[0]
-                        if final_result[keyword][1] == 0:
-                            final_result[keyword][1] = adver
+                        if ('sr_1_' in links):
+                            adver = links.split('sr_1_')[1].split('_')[0]
+                            if final_result[keyword][1] == 0:
+                                final_result[keyword][1] = adver
+                        else:
+                            if final_result[keyword][1] == 0:
+                                final_result[keyword][1] = 0
+                            pirnt('Error :\n' + links + '\n Please check it')
                     else:
-                        nature = links.split('sr_1_')[1].split('?')[0]
-                        # nature
-                        if final_result[keyword][2] == 0:
-                            final_result[keyword][2] = nature
+                        if ('sr_1_' in links):
+                            nature = links.split('sr_1_')[1].split('?')[0]
+                            if final_result[keyword][2] == 0:
+                                final_result[keyword][2] = nature
+                        else:
+                            if final_result[keyword][2] == 0:
+                                final_result[keyword][2] = 0
+                            pirnt('Error :\n' + links + '\n Please check it')
 driver.quit()
 print("\n\n")
 for k,v in final_result.items():
