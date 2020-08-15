@@ -21,7 +21,7 @@ while flags:
             print(i + '\n')
             commitName = (i.split('.')[0])
             commitName = commitName + ' CN: ' + dates
-            copyfile(os.path.join(father_path, 'keyword', i), os.path.join(father_path, 'test.csv'))
+            # copyfile(os.path.join(father_path, 'keyword', i), os.path.join(father_path, 'test.csv'))
             repo.index.add(['test.csv'])
             repo.index.commit(commitName)
             subprocess.check_call(['git', 'push', 'origin', 'master'])
