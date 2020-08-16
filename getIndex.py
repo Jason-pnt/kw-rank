@@ -92,6 +92,7 @@ with open('test.csv','r') as f:
                             if final_result[keyword][2] == 0:
                                 final_result[keyword][2] = nature
                         else:
+                            if (links.endswith(re.compile([0-9])))
                             if final_result[keyword][2] == 0:
                                 final_result[keyword][2] = 0
                             print('Error :\n' + links + '\n Please check it')
