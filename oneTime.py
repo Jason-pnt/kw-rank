@@ -16,6 +16,6 @@ time_now = time.strftime("%H:%M:%S", time.localtime())
 dates = time.strftime("%Y-%m-%d", time.localtime())
 
 commitName = 'test.csv' + ' CN: ' + dates
-repo.index.add(['test.csv'])
+repo.index.add(['*'])
 repo.index.commit(commitName)
 subprocess.check_call(['git', 'push', 'origin', 'master'])            

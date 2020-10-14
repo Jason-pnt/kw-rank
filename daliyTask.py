@@ -26,7 +26,7 @@ while flags:
                 commitName = (i.split('.')[0])
                 commitName = commitName + ' ' + pdt_times
                 copyfile(os.path.join(father_path, 'keyword', i), os.path.join(father_path, 'test.csv'))
-                repo.index.add(['test.csv'])
+                repo.index.add(['*'])
                 repo.index.commit(commitName)
                 subprocess.check_call(['git', 'push', 'origin', 'master'])
                 time.sleep(2)

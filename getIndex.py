@@ -76,7 +76,7 @@ with open('test.csv','r') as f:
                         final_result[keyword][0] = count
                     flags = True
                 soup = BeautifulSoup(driver.page_source, "html.parser")
-                for asin in soup.find_all(href=re.compile("READY-PARD-")):
+                for asin in soup.find_all(href=re.compile(sys.argv[1])):
                     links = str(asin.get('href'))
                     if (links.startswith('/gp')):
                         if ('sr_1_' in links):
