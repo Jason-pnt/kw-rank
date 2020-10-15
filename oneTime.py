@@ -15,7 +15,26 @@ pdt_timezone=pytz.timezone("America/Los_Angeles")
 time_now = time.strftime("%H:%M:%S", time.localtime())
 dates = time.strftime("%Y-%m-%d", time.localtime())
 
-commitName = 'test.csv' + ' CN: ' + dates
-repo.index.add(['*'])
-repo.index.commit(commitName)
-subprocess.check_call(['git', 'push', 'origin', 'master'])            
+flags = True
+while flags:
+    for i in (os.listdir(os.path.join(father_path, 'keyword'))):
+        pdt_times = datetime.datetime.now(pdt_timezone).strftime("%Y-%m-%d %H:%M:%S")
+        if i.endswith('xlsx'):
+            print(i + '\n')
+            commitName = (i.split('.')[0])
+            commitName = commitName + ' ' + pdt_times
+            copyfile(os.path.join(father_path, 'keyword', i), os.path.join(father_path, 'test.xlsx'))
+            repo.index.add(['*'])
+            repo.index.commit(commitName)
+            subprocess.check_call(['git', 'push', 'origin', 'master'])
+            time.sleep(2)
+    flags = False
+
+
+
+
+
+# commitName = 'test.csv' + ' CN: ' + dates
+# repo.index.add(['*'])
+# repo.index.commit(commitName)
+# subprocess.check_call(['git', 'push', 'origin', 'master'])            
