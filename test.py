@@ -55,13 +55,13 @@ table = data.sheet_by_index(0)
 col1 = (table.col_values(0))
 print("总行数：" + str(table.nrows))
 print("总列数：" + str(table.ncols))
+print('asin is :' + ASIN)
 for i in range(len(col1)):
     col1[i] = str(col1[i]).strip()
 
 diff = []
 
 for i in col1:
-    print(i)
     if (len(i) != 0):
         lineToList = i.split(' ')
         linkStr='s?k='
@@ -109,7 +109,7 @@ for i in col1:
 driver.quit()
 print("\n\n")
 for k,v in final_result.items():
-    print(k,v)
+    print('key: ',k,','.join(v))
 
 pf = pd.DataFrame(final_result)
 pf = pd.DataFrame(pf.values.T, index= pf.columns, columns=pf.index)
