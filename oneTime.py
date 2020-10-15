@@ -29,12 +29,3 @@ while flags:
             subprocess.check_call(['git', 'push', 'origin', 'master'])
             time.sleep(2)
     flags = False
-
-
-
-
-
-# commitName = 'test.csv' + ' CN: ' + dates
-# repo.index.add(['*'])
-# repo.index.commit(commitName)
-# subprocess.check_call(['git', 'push', 'origin', 'master'])            

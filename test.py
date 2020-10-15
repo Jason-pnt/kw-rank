@@ -109,7 +109,7 @@ for i in col1:
 driver.quit()
 print("\n\n")
 for k,v in final_result.items():
-    print('key: ',k,','.join(v))
+    print('key: ',k,str(','.join(v)))
 
 pf = pd.DataFrame(final_result)
 pf = pd.DataFrame(pf.values.T, index= pf.columns, columns=pf.index)
