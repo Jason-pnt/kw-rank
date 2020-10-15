@@ -48,7 +48,7 @@ print('\n Amazon ZIPCode:'+ driver.find_element_by_xpath('//*[@id="glow-ingress-
 counts = 0
 final_result = {}
 
-data = xlrd.open_workbook('diff.xlsx')
+data = xlrd.open_workbook('test.xlsx')
 data.sheet_names()
 ASIN = ''.join(data.sheet_names())
 table = data.sheet_by_index(0)
