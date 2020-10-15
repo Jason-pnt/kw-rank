@@ -99,7 +99,7 @@ with open('test.csv','r') as f:
 driver.quit()
 print("\n\n")
 for k,v in final_result.items():
-    print(k,v)
+    print('[',k,v)
 
 pf = pd.DataFrame(final_result)
 pf = pd.DataFrame(pf.values.T, index= pf.columns, columns=pf.index)

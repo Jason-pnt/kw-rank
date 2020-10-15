@@ -18,4 +18,4 @@ before_install:
   - export PATH=$PATH:$PWD
   - echo $PWD
 script: 
-  python getIndex.py B08K44C9Y9
+  python test.py
