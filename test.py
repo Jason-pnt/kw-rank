@@ -58,6 +58,7 @@ print("总列数：" + str(table.ncols))
 print('asin is :' + ASIN)
 for i in range(len(col1)):
     col1[i] = str(col1[i]).strip()
+ 
 
 diff = []
 
