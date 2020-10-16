@@ -58,6 +58,7 @@ print("总列数：" + str(table.ncols))
 print('asin is :' + ASIN)
 for i in range(len(col1)):
     col1[i] = str(col1[i]).strip()
+ 
 
 diff = []
 
@@ -109,7 +110,7 @@ for i in col1:
 driver.quit()
 print("\n\n")
 for k,v in final_result.items():
-    print('key:,',k ',',v)
+    print('key:',k ,v)
 
 pf = pd.DataFrame(final_result)
 pf = pd.DataFrame(pf.values.T, index= pf.columns, columns=pf.index)
