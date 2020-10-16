@@ -1,6 +1,9 @@
 #-*-coding: utf-8 -*-
 # pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-#pip3 install pillow selenium pytz
+# pip3 install pillow selenium pytz gitpython
+# git config --global credential.helper store
+
+
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.alert import Alert 
