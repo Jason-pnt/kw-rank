@@ -45,7 +45,6 @@ time.sleep(10)
 # driver.get('https://www.amazon.com/')
 # print('\n Amazon ZIPCode:'+ driver.find_element_by_xpath('//*[@id="glow-ingress-line2"]').text)
 
-
 counts = 0
 final_result = {}
 
